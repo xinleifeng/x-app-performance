@@ -1,0 +1,2439 @@
+{
+  "namespace": "sap.crun.performance",
+  "definitions": {
+    "PerformanceDataService": {
+      "kind": "service",
+      "@source": "srv/cat-service.cds"
+    },
+    "PerformanceDataService.AGGRECIN": {
+      "kind": "entity",
+      "@Capabilities.DeleteRestrictions.Deletable": false,
+      "@Capabilities.InsertRestrictions.Insertable": false,
+      "@Capabilities.UpdateRestrictions.Updatable": false,
+      "@Catalog.index": [
+        {
+          "name": "AGGRECIN_INDEX",
+          "unique": false,
+          "order": {
+            "#": "DESC"
+          },
+          "elementNames": [
+            "TYPE",
+            "NAME1"
+          ]
+        }
+      ],
+      "@Catalog.tableType": {
+        "#": "COLUMN"
+      },
+      "@cds.persistence.name": "PERFORMANCEDATASERVICE_AGGRECIN",
+      "@readonly": true,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "sap.crun.performance.AGGRECIN"
+            ]
+          }
+        }
+      },
+      "elements": {
+        "TYPE": {
+          "@cds.persistence.name": "TYPE",
+          "key": true,
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME1": {
+          "@cds.persistence.name": "NAME1",
+          "key": true,
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME2": {
+          "@cds.persistence.name": "NAME2",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "USERNAME": {
+          "@cds.persistence.name": "USERNAME",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CDATE": {
+          "@cds.persistence.name": "CDATE",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CTIME": {
+          "@cds.persistence.name": "CTIME",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SERVICEID": {
+          "@cds.persistence.name": "SERVICEID",
+          "type": "cds.String",
+          "length": 36,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "PREVIOUSCOMPONENT": {
+          "@cds.persistence.name": "PREVIOUSCOMPONENT",
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "INSTANCE": {
+          "@cds.persistence.name": "INSTANCE",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SCLIENT": {
+          "@cds.persistence.name": "SCLIENT",
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SID": {
+          "@cds.persistence.name": "SID",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SYSTEMTYPE": {
+          "@cds.persistence.name": "SYSTEMTYPE",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "EXECUTION": {
+          "@cds.persistence.name": "EXECUTION",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RESPTIME": {
+          "@cds.persistence.name": "RESPTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RESPTIMEMIN": {
+          "@cds.persistence.name": "RESPTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RESPTIMEMAX": {
+          "@cds.persistence.name": "RESPTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "MEMORY": {
+          "@cds.persistence.name": "MEMORY",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CPUTIME": {
+          "@cds.persistence.name": "CPUTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CPUTIMEMIN": {
+          "@cds.persistence.name": "CPUTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CPUTIMEMAX": {
+          "@cds.persistence.name": "CPUTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "DBTIME": {
+          "@cds.persistence.name": "DBTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "DBTIMEMIN": {
+          "@cds.persistence.name": "DBTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "DBTIMEMAX": {
+          "@cds.persistence.name": "DBTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "WAITTIME": {
+          "@cds.persistence.name": "WAITTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "WAITTIMEMIN": {
+          "@cds.persistence.name": "WAITTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "WAITTIMEMAX": {
+          "@cds.persistence.name": "WAITTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NETTIME": {
+          "@cds.persistence.name": "NETTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NETTIMEMIN": {
+          "@cds.persistence.name": "NETTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NETTIMEMAX": {
+          "@cds.persistence.name": "NETTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "LENGTH": {
+          "@cds.persistence.name": "LENGTH",
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CHAR1": {
+          "@cds.persistence.name": "CHAR1",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CHAR2": {
+          "@cds.persistence.name": "CHAR2",
+          "type": "cds.String",
+          "length": 100,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NUM1": {
+          "@cds.persistence.name": "NUM1",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NUM2": {
+          "@cds.persistence.name": "NUM2",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NUM3": {
+          "@cds.persistence.name": "NUM3",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "USERTYPE": {
+          "@cds.persistence.name": "USERTYPE",
+          "type": "cds.String",
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "BYTES_RCVD": {
+          "@cds.persistence.name": "BYTES_RCVD",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "BYTES_SENT": {
+          "@cds.persistence.name": "BYTES_SENT",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        }
+      },
+      "$syntax": "projection"
+    },
+    "PerformanceDataService.AGGRECOUT": {
+      "kind": "entity",
+      "@Capabilities.DeleteRestrictions.Deletable": false,
+      "@Capabilities.InsertRestrictions.Insertable": false,
+      "@Capabilities.UpdateRestrictions.Updatable": false,
+      "@Catalog.index": [
+        {
+          "name": "AGGRECOUT_INDEX",
+          "unique": false,
+          "order": {
+            "#": "DESC"
+          },
+          "elementNames": [
+            "TYPE",
+            "NAME1"
+          ]
+        }
+      ],
+      "@Catalog.tableType": {
+        "#": "COLUMN"
+      },
+      "@cds.persistence.name": "PERFORMANCEDATASERVICE_AGGRECOUT",
+      "@readonly": true,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "sap.crun.performance.AGGRECOUT"
+            ]
+          }
+        }
+      },
+      "elements": {
+        "TYPE": {
+          "@cds.persistence.name": "TYPE",
+          "key": true,
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME1": {
+          "@cds.persistence.name": "NAME1",
+          "key": true,
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME2": {
+          "@cds.persistence.name": "NAME2",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "USERNAME": {
+          "@cds.persistence.name": "USERNAME",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CDATE": {
+          "@cds.persistence.name": "CDATE",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CTIME": {
+          "@cds.persistence.name": "CTIME",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SERVICEID": {
+          "@cds.persistence.name": "SERVICEID",
+          "type": "cds.String",
+          "length": 36,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "PREVIOUSCOMPONENT": {
+          "@cds.persistence.name": "PREVIOUSCOMPONENT",
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "INSTANCE": {
+          "@cds.persistence.name": "INSTANCE",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SCLIENT": {
+          "@cds.persistence.name": "SCLIENT",
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "TYPEOUT": {
+          "@cds.persistence.name": "TYPEOUT",
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME1OUT": {
+          "@cds.persistence.name": "NAME1OUT",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SID": {
+          "@cds.persistence.name": "SID",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SYSTEMTYPE": {
+          "@cds.persistence.name": "SYSTEMTYPE",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "USERNAMEOUT": {
+          "@cds.persistence.name": "USERNAMEOUT",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "TARGETINSTANCE": {
+          "@cds.persistence.name": "TARGETINSTANCE",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "EXECUTION": {
+          "@cds.persistence.name": "EXECUTION",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CALLINGTIME": {
+          "@cds.persistence.name": "CALLINGTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CALLINGTIMEMIN": {
+          "@cds.persistence.name": "CALLINGTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CALLINGTIMEMAX": {
+          "@cds.persistence.name": "CALLINGTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "SENTBYTES": {
+          "@cds.persistence.name": "SENTBYTES",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RECEIVEDBYTES": {
+          "@cds.persistence.name": "RECEIVEDBYTES",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        }
+      },
+      "$syntax": "projection"
+    },
+    "PerformanceDataService.Books": {
+      "kind": "entity",
+      "@Capabilities.DeleteRestrictions.Deletable": false,
+      "@Capabilities.InsertRestrictions.Insertable": false,
+      "@Capabilities.UpdateRestrictions.Updatable": false,
+      "@cds.persistence.name": "PERFORMANCEDATASERVICE_BOOKS",
+      "@readonly": true,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "sap.crun.performance.Books"
+            ]
+          }
+        }
+      },
+      "elements": {
+        "ID": {
+          "@cds.persistence.name": "ID",
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "title": {
+          "@cds.persistence.name": "TITLE",
+          "type": "cds.String"
+        },
+        "stock": {
+          "@cds.persistence.name": "STOCK",
+          "type": "cds.Integer"
+        }
+      },
+      "$syntax": "projection"
+    },
+    "PerformanceDataService.SNGLRECIN": {
+      "kind": "entity",
+      "@Capabilities.DeleteRestrictions.Deletable": false,
+      "@Capabilities.InsertRestrictions.Insertable": false,
+      "@Capabilities.UpdateRestrictions.Updatable": false,
+      "@Catalog.index": [
+        {
+          "name": "SNGLRECIN_INDEX",
+          "unique": false,
+          "order": {
+            "#": "DESC"
+          },
+          "elementNames": [
+            "TRANSID"
+          ]
+        }
+      ],
+      "@Catalog.tableType": {
+        "#": "COLUMN"
+      },
+      "@cds.persistence.name": "PERFORMANCEDATASERVICE_SNGLRECIN",
+      "@readonly": true,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "sap.crun.performance.SNGLRECIN"
+            ]
+          }
+        }
+      },
+      "elements": {
+        "TRANSID": {
+          "@cds.persistence.name": "TRANSID",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNID": {
+          "@cds.persistence.name": "CONNID",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNCOUNTER": {
+          "@cds.persistence.name": "CONNCOUNTER",
+          "key": true,
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CDATE": {
+          "@cds.persistence.name": "CDATE",
+          "key": true,
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CTIME": {
+          "@cds.persistence.name": "CTIME",
+          "key": true,
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SERVICEID": {
+          "@cds.persistence.name": "SERVICEID",
+          "key": true,
+          "type": "cds.String",
+          "length": 36,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SID": {
+          "@cds.persistence.name": "SID",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SYSTEMTYPE": {
+          "@cds.persistence.name": "SYSTEMTYPE",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "TYPE": {
+          "@cds.persistence.name": "TYPE",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME1": {
+          "@cds.persistence.name": "NAME1",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME2": {
+          "@cds.persistence.name": "NAME2",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "USERNAME": {
+          "@cds.persistence.name": "USERNAME",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SCLIENT": {
+          "@cds.persistence.name": "SCLIENT",
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "INSTANCE": {
+          "@cds.persistence.name": "INSTANCE",
+          "type": "cds.String",
+          "length": 100,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "ROOTCTXID": {
+          "@cds.persistence.name": "ROOTCTXID",
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "COMPONENTID": {
+          "@cds.persistence.name": "COMPONENTID",
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "ACTION": {
+          "@cds.persistence.name": "ACTION",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "PREVIOUSCOMPONENT": {
+          "@cds.persistence.name": "PREVIOUSCOMPONENT",
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "RESPTIME": {
+          "@cds.persistence.name": "RESPTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "MEMORY": {
+          "@cds.persistence.name": "MEMORY",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CPUTIME": {
+          "@cds.persistence.name": "CPUTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "DBTIME": {
+          "@cds.persistence.name": "DBTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "WAITTIME": {
+          "@cds.persistence.name": "WAITTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NETTIME": {
+          "@cds.persistence.name": "NETTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "PARAMS": {
+          "@cds.persistence.name": "PARAMS",
+          "type": "cds.String",
+          "length": 255,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "MS": {
+          "@cds.persistence.name": "MS",
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RATING": {
+          "@cds.persistence.name": "RATING",
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "USERTYPE": {
+          "@cds.persistence.name": "USERTYPE",
+          "type": "cds.String",
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CHAR1": {
+          "@cds.persistence.name": "CHAR1",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CHAR2": {
+          "@cds.persistence.name": "CHAR2",
+          "type": "cds.String",
+          "length": 100,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NUM1": {
+          "@cds.persistence.name": "NUM1",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NUM2": {
+          "@cds.persistence.name": "NUM2",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NUM3": {
+          "@cds.persistence.name": "NUM3",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "BYTES_RCVD": {
+          "@cds.persistence.name": "BYTES_RCVD",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "BYTES_SENT": {
+          "@cds.persistence.name": "BYTES_SENT",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        }
+      },
+      "$syntax": "projection"
+    },
+    "PerformanceDataService.SNGLRECOUT": {
+      "kind": "entity",
+      "@Capabilities.DeleteRestrictions.Deletable": false,
+      "@Capabilities.InsertRestrictions.Insertable": false,
+      "@Capabilities.UpdateRestrictions.Updatable": false,
+      "@Catalog.index": [
+        {
+          "name": "SNGLRECOUT_INDEX",
+          "unique": false,
+          "order": {
+            "#": "DESC"
+          },
+          "elementNames": [
+            "TRANSID"
+          ]
+        }
+      ],
+      "@Catalog.tableType": {
+        "#": "COLUMN"
+      },
+      "@cds.persistence.name": "PERFORMANCEDATASERVICE_SNGLRECOUT",
+      "@readonly": true,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "sap.crun.performance.SNGLRECOUT"
+            ]
+          }
+        }
+      },
+      "elements": {
+        "TRANSID": {
+          "@cds.persistence.name": "TRANSID",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNID": {
+          "@cds.persistence.name": "CONNID",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNCOUNTER": {
+          "@cds.persistence.name": "CONNCOUNTER",
+          "key": true,
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CDATE": {
+          "@cds.persistence.name": "CDATE",
+          "key": true,
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CTIME": {
+          "@cds.persistence.name": "CTIME",
+          "key": true,
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SERVICEID": {
+          "@cds.persistence.name": "SERVICEID",
+          "key": true,
+          "type": "cds.String",
+          "length": 36,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNIDOUT": {
+          "@cds.persistence.name": "CONNIDOUT",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNCOUNTERCOUT": {
+          "@cds.persistence.name": "CONNCOUNTERCOUT",
+          "key": true,
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "SID": {
+          "@cds.persistence.name": "SID",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SYSTEMTYPE": {
+          "@cds.persistence.name": "SYSTEMTYPE",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "TYPE": {
+          "@cds.persistence.name": "TYPE",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME1": {
+          "@cds.persistence.name": "NAME1",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME2": {
+          "@cds.persistence.name": "NAME2",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "USERNAME": {
+          "@cds.persistence.name": "USERNAME",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "TARGETINSTANCE": {
+          "@cds.persistence.name": "TARGETINSTANCE",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CALLINGTIME": {
+          "@cds.persistence.name": "CALLINGTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "SENTBYTES": {
+          "@cds.persistence.name": "SENTBYTES",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RECEIVEDBYTES": {
+          "@cds.persistence.name": "RECEIVEDBYTES",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        }
+      },
+      "$syntax": "projection"
+    },
+    "sap.crun.performance.AGGRECIN": {
+      "kind": "entity",
+      "@Catalog.index": [
+        {
+          "name": "AGGRECIN_INDEX",
+          "unique": false,
+          "order": {
+            "#": "DESC"
+          },
+          "elementNames": [
+            "TYPE",
+            "NAME1"
+          ]
+        }
+      ],
+      "@Catalog.tableType": {
+        "#": "COLUMN"
+      },
+      "@cds.persistence.name": "SAP_CRUN_PERFORMANCE_AGGRECIN",
+      "elements": {
+        "TYPE": {
+          "@cds.persistence.name": "TYPE",
+          "key": true,
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME1": {
+          "@cds.persistence.name": "NAME1",
+          "key": true,
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME2": {
+          "@cds.persistence.name": "NAME2",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "USERNAME": {
+          "@cds.persistence.name": "USERNAME",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CDATE": {
+          "@cds.persistence.name": "CDATE",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CTIME": {
+          "@cds.persistence.name": "CTIME",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SERVICEID": {
+          "@cds.persistence.name": "SERVICEID",
+          "type": "cds.String",
+          "length": 36,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "PREVIOUSCOMPONENT": {
+          "@cds.persistence.name": "PREVIOUSCOMPONENT",
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "INSTANCE": {
+          "@cds.persistence.name": "INSTANCE",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SCLIENT": {
+          "@cds.persistence.name": "SCLIENT",
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SID": {
+          "@cds.persistence.name": "SID",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SYSTEMTYPE": {
+          "@cds.persistence.name": "SYSTEMTYPE",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "EXECUTION": {
+          "@cds.persistence.name": "EXECUTION",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RESPTIME": {
+          "@cds.persistence.name": "RESPTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RESPTIMEMIN": {
+          "@cds.persistence.name": "RESPTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RESPTIMEMAX": {
+          "@cds.persistence.name": "RESPTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "MEMORY": {
+          "@cds.persistence.name": "MEMORY",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CPUTIME": {
+          "@cds.persistence.name": "CPUTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CPUTIMEMIN": {
+          "@cds.persistence.name": "CPUTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CPUTIMEMAX": {
+          "@cds.persistence.name": "CPUTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "DBTIME": {
+          "@cds.persistence.name": "DBTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "DBTIMEMIN": {
+          "@cds.persistence.name": "DBTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "DBTIMEMAX": {
+          "@cds.persistence.name": "DBTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "WAITTIME": {
+          "@cds.persistence.name": "WAITTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "WAITTIMEMIN": {
+          "@cds.persistence.name": "WAITTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "WAITTIMEMAX": {
+          "@cds.persistence.name": "WAITTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NETTIME": {
+          "@cds.persistence.name": "NETTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NETTIMEMIN": {
+          "@cds.persistence.name": "NETTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NETTIMEMAX": {
+          "@cds.persistence.name": "NETTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "LENGTH": {
+          "@cds.persistence.name": "LENGTH",
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CHAR1": {
+          "@cds.persistence.name": "CHAR1",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CHAR2": {
+          "@cds.persistence.name": "CHAR2",
+          "type": "cds.String",
+          "length": 100,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NUM1": {
+          "@cds.persistence.name": "NUM1",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NUM2": {
+          "@cds.persistence.name": "NUM2",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NUM3": {
+          "@cds.persistence.name": "NUM3",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "USERTYPE": {
+          "@cds.persistence.name": "USERTYPE",
+          "type": "cds.String",
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "BYTES_RCVD": {
+          "@cds.persistence.name": "BYTES_RCVD",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "BYTES_SENT": {
+          "@cds.persistence.name": "BYTES_SENT",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        }
+      }
+    },
+    "sap.crun.performance.AGGRECOUT": {
+      "kind": "entity",
+      "@Catalog.index": [
+        {
+          "name": "AGGRECOUT_INDEX",
+          "unique": false,
+          "order": {
+            "#": "DESC"
+          },
+          "elementNames": [
+            "TYPE",
+            "NAME1"
+          ]
+        }
+      ],
+      "@Catalog.tableType": {
+        "#": "COLUMN"
+      },
+      "@cds.persistence.name": "SAP_CRUN_PERFORMANCE_AGGRECOUT",
+      "elements": {
+        "TYPE": {
+          "@cds.persistence.name": "TYPE",
+          "key": true,
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME1": {
+          "@cds.persistence.name": "NAME1",
+          "key": true,
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME2": {
+          "@cds.persistence.name": "NAME2",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "USERNAME": {
+          "@cds.persistence.name": "USERNAME",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CDATE": {
+          "@cds.persistence.name": "CDATE",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CTIME": {
+          "@cds.persistence.name": "CTIME",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SERVICEID": {
+          "@cds.persistence.name": "SERVICEID",
+          "type": "cds.String",
+          "length": 36,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "PREVIOUSCOMPONENT": {
+          "@cds.persistence.name": "PREVIOUSCOMPONENT",
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "INSTANCE": {
+          "@cds.persistence.name": "INSTANCE",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SCLIENT": {
+          "@cds.persistence.name": "SCLIENT",
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "TYPEOUT": {
+          "@cds.persistence.name": "TYPEOUT",
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME1OUT": {
+          "@cds.persistence.name": "NAME1OUT",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SID": {
+          "@cds.persistence.name": "SID",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SYSTEMTYPE": {
+          "@cds.persistence.name": "SYSTEMTYPE",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "USERNAMEOUT": {
+          "@cds.persistence.name": "USERNAMEOUT",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "TARGETINSTANCE": {
+          "@cds.persistence.name": "TARGETINSTANCE",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "EXECUTION": {
+          "@cds.persistence.name": "EXECUTION",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CALLINGTIME": {
+          "@cds.persistence.name": "CALLINGTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CALLINGTIMEMIN": {
+          "@cds.persistence.name": "CALLINGTIMEMIN",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CALLINGTIMEMAX": {
+          "@cds.persistence.name": "CALLINGTIMEMAX",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "SENTBYTES": {
+          "@cds.persistence.name": "SENTBYTES",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RECEIVEDBYTES": {
+          "@cds.persistence.name": "RECEIVEDBYTES",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        }
+      }
+    },
+    "sap.crun.performance.Books": {
+      "kind": "entity",
+      "@cds.persistence.name": "SAP_CRUN_PERFORMANCE_BOOKS",
+      "elements": {
+        "ID": {
+          "@cds.persistence.name": "ID",
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "title": {
+          "@cds.persistence.name": "TITLE",
+          "type": "cds.String"
+        },
+        "stock": {
+          "@cds.persistence.name": "STOCK",
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "sap.crun.performance.SNGLRECIN": {
+      "kind": "entity",
+      "@Catalog.index": [
+        {
+          "name": "SNGLRECIN_INDEX",
+          "unique": false,
+          "order": {
+            "#": "DESC"
+          },
+          "elementNames": [
+            "TRANSID"
+          ]
+        }
+      ],
+      "@Catalog.tableType": {
+        "#": "COLUMN"
+      },
+      "@cds.persistence.name": "SAP_CRUN_PERFORMANCE_SNGLRECIN",
+      "elements": {
+        "TRANSID": {
+          "@cds.persistence.name": "TRANSID",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNID": {
+          "@cds.persistence.name": "CONNID",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNCOUNTER": {
+          "@cds.persistence.name": "CONNCOUNTER",
+          "key": true,
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CDATE": {
+          "@cds.persistence.name": "CDATE",
+          "key": true,
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CTIME": {
+          "@cds.persistence.name": "CTIME",
+          "key": true,
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SERVICEID": {
+          "@cds.persistence.name": "SERVICEID",
+          "key": true,
+          "type": "cds.String",
+          "length": 36,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SID": {
+          "@cds.persistence.name": "SID",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SYSTEMTYPE": {
+          "@cds.persistence.name": "SYSTEMTYPE",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "TYPE": {
+          "@cds.persistence.name": "TYPE",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME1": {
+          "@cds.persistence.name": "NAME1",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME2": {
+          "@cds.persistence.name": "NAME2",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "USERNAME": {
+          "@cds.persistence.name": "USERNAME",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SCLIENT": {
+          "@cds.persistence.name": "SCLIENT",
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "INSTANCE": {
+          "@cds.persistence.name": "INSTANCE",
+          "type": "cds.String",
+          "length": 100,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "ROOTCTXID": {
+          "@cds.persistence.name": "ROOTCTXID",
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "COMPONENTID": {
+          "@cds.persistence.name": "COMPONENTID",
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "ACTION": {
+          "@cds.persistence.name": "ACTION",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "PREVIOUSCOMPONENT": {
+          "@cds.persistence.name": "PREVIOUSCOMPONENT",
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "RESPTIME": {
+          "@cds.persistence.name": "RESPTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "MEMORY": {
+          "@cds.persistence.name": "MEMORY",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CPUTIME": {
+          "@cds.persistence.name": "CPUTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "DBTIME": {
+          "@cds.persistence.name": "DBTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "WAITTIME": {
+          "@cds.persistence.name": "WAITTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NETTIME": {
+          "@cds.persistence.name": "NETTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "PARAMS": {
+          "@cds.persistence.name": "PARAMS",
+          "type": "cds.String",
+          "length": 255,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "MS": {
+          "@cds.persistence.name": "MS",
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RATING": {
+          "@cds.persistence.name": "RATING",
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "USERTYPE": {
+          "@cds.persistence.name": "USERTYPE",
+          "type": "cds.String",
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CHAR1": {
+          "@cds.persistence.name": "CHAR1",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CHAR2": {
+          "@cds.persistence.name": "CHAR2",
+          "type": "cds.String",
+          "length": 100,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NUM1": {
+          "@cds.persistence.name": "NUM1",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NUM2": {
+          "@cds.persistence.name": "NUM2",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NUM3": {
+          "@cds.persistence.name": "NUM3",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "BYTES_RCVD": {
+          "@cds.persistence.name": "BYTES_RCVD",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "BYTES_SENT": {
+          "@cds.persistence.name": "BYTES_SENT",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        }
+      }
+    },
+    "sap.crun.performance.SNGLRECOUT": {
+      "kind": "entity",
+      "@Catalog.index": [
+        {
+          "name": "SNGLRECOUT_INDEX",
+          "unique": false,
+          "order": {
+            "#": "DESC"
+          },
+          "elementNames": [
+            "TRANSID"
+          ]
+        }
+      ],
+      "@Catalog.tableType": {
+        "#": "COLUMN"
+      },
+      "@cds.persistence.name": "SAP_CRUN_PERFORMANCE_SNGLRECOUT",
+      "elements": {
+        "TRANSID": {
+          "@cds.persistence.name": "TRANSID",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNID": {
+          "@cds.persistence.name": "CONNID",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNCOUNTER": {
+          "@cds.persistence.name": "CONNCOUNTER",
+          "key": true,
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "CDATE": {
+          "@cds.persistence.name": "CDATE",
+          "key": true,
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CTIME": {
+          "@cds.persistence.name": "CTIME",
+          "key": true,
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SERVICEID": {
+          "@cds.persistence.name": "SERVICEID",
+          "key": true,
+          "type": "cds.String",
+          "length": 36,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNIDOUT": {
+          "@cds.persistence.name": "CONNIDOUT",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CONNCOUNTERCOUT": {
+          "@cds.persistence.name": "CONNCOUNTERCOUT",
+          "key": true,
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "SID": {
+          "@cds.persistence.name": "SID",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "SYSTEMTYPE": {
+          "@cds.persistence.name": "SYSTEMTYPE",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "TYPE": {
+          "@cds.persistence.name": "TYPE",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME1": {
+          "@cds.persistence.name": "NAME1",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "NAME2": {
+          "@cds.persistence.name": "NAME2",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "USERNAME": {
+          "@cds.persistence.name": "USERNAME",
+          "type": "cds.String",
+          "length": 20,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "TARGETINSTANCE": {
+          "@cds.persistence.name": "TARGETINSTANCE",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CALLINGTIME": {
+          "@cds.persistence.name": "CALLINGTIME",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "SENTBYTES": {
+          "@cds.persistence.name": "SENTBYTES",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "RECEIVEDBYTES": {
+          "@cds.persistence.name": "RECEIVEDBYTES",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        }
+      }
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.13.4"
+  },
+  "$version": "1.0",
+  "@sql_mapping": "plain"
+}
