@@ -42,6 +42,13 @@ public class SecurityResourceConfigurerService extends ResourceServerConfigurerA
                 .antMatchers("/single").permitAll()
                 .antMatchers("/book").permitAll()
                 .antMatchers("/book/books").permitAll()
+                .antMatchers("/snglrec/allouts").permitAll()
+                .antMatchers("/snglrec/outs/{transId}").permitAll()
+                .antMatchers("/snglrec/out").permitAll()
+                
+                .antMatchers("/snglrec/allins").permitAll()
+                .antMatchers("/snglrec/in").permitAll()
+                
                 .anyRequest().authenticated(); //Require authentication for any other request not covered above
     }
 

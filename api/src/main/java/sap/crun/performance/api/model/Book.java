@@ -34,26 +34,3 @@ public class Book implements Serializable {
 	}
 
 }
-
-
-//
-//package sap.crun.performance.api.model;
-//
-//public class Book {
-//
-//	private String bookId;
-//
-//	private String bookTitle;
-//
-//
-//	private int bookStock;
-//
-//	public String getBookTitle() {
-//		return bookTitle;
-//	}
-//
-//	public void getBookTitle(String bookTitle) {
-//		this.bookTitle = bookTitle;
-//	}
-//
-//}
