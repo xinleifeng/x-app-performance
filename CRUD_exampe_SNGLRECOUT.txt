@@ -1,0 +1,162 @@
+SNGLRECOUT-CRUD-examples:
+
+1. get all the existing SNGLRECOUT records:
+Request: GET
+URL: https://x-app-performance-api.cfapps.sap.hana.ondemand.com/snglrec/allouts
+Output:
+[
+    {
+        "transId": "01EF78FCEE104974917C7114CF73E0B2",
+        "connId": "0464FA5C2C1D8327E10000000A428075",
+        "connCounter": 1,
+        "cDate": "2019/6/7",
+        "cTime": "8:16:52",
+        "serviceId": "FA163E4CC4F01EE68CC7030173AFFB7E",
+        "connIdOut": "5CFA64071D2C2783E10000000A428075",
+        "connCounterOut": 1,
+        "sId": "FD4ADM",
+        "systemType": "ABAP",
+        "type": "254",
+        "name1": "/IWBEP/FM_MGW_HANDLE_REQUEST",
+        "name2": "/IWBEP/CL_MGW_QUERY_SCHEDULER=CP",
+        "userName": "C5289649",
+        "targetInstance": "ldcifd4_FD4_04",
+        "callingTime": 0,
+        "sendBypes": 0,
+        "receivedBypes": 0
+    },
+    {
+        "transId": "01EF78FCEE104974917C7114CF73E0B2",
+        "connId": "0464FA5C2C1D8327E10000000A428075",
+        "connCounter": 1,
+        "cDate": "2019/6/7",
+        "cTime": "8:16:52",
+        "serviceId": "FA163E4CC4F01EE68CC7030173AFFB7E",
+        "connIdOut": "5CFA64081D2C2783E10000000A428075",
+        "connCounterOut": 1,
+        "sId": "FD4ADM",
+        "systemType": "ABAP",
+        "type": "254",
+        "name1": "/IWBEP/FM_MGW_HANDLE_REQUEST",
+        "name2": "/IWBEP/CL_MGW_QUERY_SCHEDULER=CP",
+        "userName": "C5289649",
+        "targetInstance": "ldcifd4_FD4_04",
+        "callingTime": 175,
+        "sendBypes": 116,
+        "receivedBypes": 6
+    }, ...
+  ]
+  
+  
+  2. get all the existing SNGLRECOUT records by TRANSID:
+  Request : GET
+  URL: https://x-app-performance-api.cfapps.sap.hana.ondemand.com/snglrec/out/{TRANSID}
+  URL: https://x-app-performance-api.cfapps.sap.hana.ondemand.com/snglrec/out/01EF78FCEE104974917C7114CF73E0B2
+  Output:
+  [
+    {
+        "transId": "01EF78FCEE104974917C7114CF73E0B2",
+        "connId": "0464FA5C2C1D8327E10000000A428075",
+        "connCounter": 1,
+        "cDate": "2019/6/7",
+        "cTime": "8:16:52",
+        "serviceId": "FA163E4CC4F01EE68CC7030173AFFB7E",
+        "connIdOut": "5CFA64071D2C2783E10000000A428075",
+        "connCounterOut": 1,
+        "sId": "FD4ADM",
+        "systemType": "ABAP",
+        "type": "254",
+        "name1": "/IWBEP/FM_MGW_HANDLE_REQUEST",
+        "name2": "/IWBEP/CL_MGW_QUERY_SCHEDULER=CP",
+        "userName": "C5289649",
+        "targetInstance": "ldcifd4_FD4_04",
+        "callingTime": 0,
+        "sendBypes": 0,
+        "receivedBypes": 0
+    },
+    {
+        "transId": "01EF78FCEE104974917C7114CF73E0B2",
+        "connId": "0464FA5C2C1D8327E10000000A428075",
+        "connCounter": 1,
+        "cDate": "2019/6/7",
+        "cTime": "8:16:52",
+        "serviceId": "FA163E4CC4F01EE68CC7030173AFFB7E",
+        "connIdOut": "5CFA64081D2C2783E10000000A428075",
+        "connCounterOut": 1,
+        "sId": "FD4ADM",
+        "systemType": "ABAP",
+        "type": "254",
+        "name1": "/IWBEP/FM_MGW_HANDLE_REQUEST",
+        "name2": "/IWBEP/CL_MGW_QUERY_SCHEDULER=CP",
+        "userName": "C5289649",
+        "targetInstance": "ldcifd4_FD4_04",
+        "callingTime": 175,
+        "sendBypes": 116,
+        "receivedBypes": 6
+    }
+]
+
+
+
+3. create new SNGLRECOUT record(s)
+Request: POST
+URL: https://x-app-performance-api.cfapps.sap.hana.ondemand.com/snglrec/outs
+body example (JSON format):
+
+[{
+        "transId": "NEW001_87CE471FB6BFE386C4602EAD",
+        "connId": "01C6F95C3D687EA7E10000000A4280XX",
+        "connCounter": 2,
+        "cDate": "2019/6/7",
+        "cTime": "8:55:44",
+        "serviceId": "FA163E4CC4F01EE68CC7030173AFFB7E",
+        "connIdOut": "5CF9C605683DA77EE10000000A428075",
+        "connCounterOut": 1,
+        "sId": "FD4ADM",
+        "systemType": "ABAP",
+        "type": "254",
+        "name1": "/IWBEP/FM_MGW_HANDLE_REQUEST",
+        "name2": "/IWBEP/CL_MGW_QUERY_SCHEDULER=CP",
+        "userName": "BABUTZKAJ",
+        "targetInstance": "ldcifd4_FD4_04",
+        "callingTime": 302.789,
+        "sendBypes": 55.789,
+        "receivedBypes": 555.789
+}]
+
+
+4. update existing SNGLRECOUT record(s)
+Request: PUT
+URL: https://x-app-performance-api.cfapps.sap.hana.ondemand.com/snglrec/outs
+request body example(JSON format)
+
+[{
+        "transId": "NEW001_87CE471FB6BFE386C4602EAD",
+        "connId": "01C6F95C3D687EA7E10000000A4280XX",
+        "connCounter": 9,
+        "cDate": "2019/6/9",
+        "cTime": "8:55:59",
+        "serviceId": "FA163E4CC4F01EE68CC7030173AFFB7E",
+        "connIdOut": "5CF9C605683DA77EE10000000A428075",
+        "connCounterOut": 9,
+        "sId": "FD4002",
+        "systemType": "AB02",
+        "type": "202",
+        "name1": "/IWBEP/FM_MGW_HANDLE_REQUEST",
+        "name2": "/IWBEP/CL_MGW_QUERY_SCHEDULER=02",
+        "userName": "BABUTZK02",
+        "targetInstance": "ldcifd4_FD4_02",
+        "callingTime": 302.999,
+        "sendBypes": 55.999,
+        "receivedBypes": 555.999
+    }
+  ]  
+
+
+5. delete existing SNGLRECOUT record(s) by TRANSID
+request: DELETE
+URL: https://x-app-performance-api.cfapps.sap.hana.ondemand.com/snglrec/out/{TRANSID}
+https://x-app-performance-api.cfapps.sap.hana.ondemand.com/snglrec/out/NEW004_87CE471FB6BFE386C4602EAD
+
+
+  
