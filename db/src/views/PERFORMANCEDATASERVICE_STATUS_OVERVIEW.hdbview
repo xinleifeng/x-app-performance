@@ -1,0 +1,22 @@
+view PERFORMANCEDATASERVICE_STATUS_OVERVIEW(IN STARTTIMESTAMP SECONDDATE, IN ENDTIMESTAMP SECONDDATE) as
+	SELECT 
+		u.type, 
+		sum(cnt) as Count
+	FROM (
+		SELECT type,count(*) as cnt
+		    FROM "SAP_CRUN_PERFORMANCE_SNGLRECIN"
+		    where 
+		    type in ('101', '254') and
+		    cdate between :STARTTIMESTAMP and :ENDTIMESTAMP and
+		    serviceid in ('FA163E4CC4F01EE68CC7030173AFFB7E', '6CAE8B74A0DE1ED88FA265A0D5CE3CE8')
+		    GROUP BY type
+		UNION ALL
+			SELECT type, count(*)
+		    FROM "SAP_CRUN_PERFORMANCE_AGGRECIN"
+		    where 
+		    type in ('101', '254') and
+		    cdate between :STARTTIMESTAMP and :ENDTIMESTAMP and
+		    serviceid in ('FA163E4CC4F01EE68CC7030173AFFB7E', '6CAE8B74A0DE1ED88FA265A0D5CE3CE8')
+		    GROUP BY type
+	) u
+	GROUP BY u.type;
