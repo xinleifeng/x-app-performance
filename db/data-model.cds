@@ -22,6 +22,7 @@ entity SNGLRECOUT {
   SENTBYTES 		  : Decimal(31,6) not null default 0;
   RECEIVEDBYTES 	  : Decimal(31,6) not null default 0;
 }  
+
   
 @Catalog.tableType: #COLUMN 
 @Catalog.index: [ { name : 'SNGLRECIN_INDEX', unique : false, order : #DESC, elementNames : ['TRANSID'] }  ]  

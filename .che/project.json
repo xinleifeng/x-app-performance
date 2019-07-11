@@ -1,1 +1,1 @@
-{"type":"mta","builders":{"default":"mtabuilder","configs":{}},"runners":{"configs":{}},"attributes":{},"description":"","mixinTypes":["fullmtabuild"]}
+{"type":"mta","builders":{"default":"mtabuilder","configs":{}},"runners":{"configs":{}},"attributes":{"sap.watt.common.setting":["{\"hdbInactiveFiles\":{\"inactiveFileList\":[\"/x-app-performance/db/src/.hdiconfig\",\"/x-app-performance/db/src/gen/.hdinamespace\"]}}"]},"description":"","mixinTypes":["fullmtabuild"]}
