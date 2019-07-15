@@ -8,53 +8,51 @@
       <EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
         <EntitySet Name="AGGRECIN" EntityType="PerformanceDataService.AGGRECIN"/>
         <EntitySet Name="AGGRECOUT" EntityType="PerformanceDataService.AGGRECOUT"/>
-        <EntitySet Name="Books" EntityType="PerformanceDataService.Books"/>
         <EntitySet Name="SNGLRECIN" EntityType="PerformanceDataService.SNGLRECIN"/>
         <EntitySet Name="SNGLRECOUT" EntityType="PerformanceDataService.SNGLRECOUT"/>
       </EntityContainer>
       <EntityType Name="AGGRECIN">
         <Key>
-          <PropertyRef Name="TYPE"/>
-          <PropertyRef Name="NAME1"/>
+          <PropertyRef Name="ID"/>
         </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
         <Property Name="TYPE" Type="Edm.String" MaxLength="3" Nullable="false"/>
-        <Property Name="NAME1" Type="Edm.String" MaxLength="150" Nullable="false"/>
-        <Property Name="NAME2" Type="Edm.String" MaxLength="150" Nullable="false"/>
-        <Property Name="USERNAME" Type="Edm.String" MaxLength="20" Nullable="false"/>
-        <Property Name="CDATE" Type="Edm.String" MaxLength="8" Nullable="false"/>
-        <Property Name="CTIME" Type="Edm.String" MaxLength="8" Nullable="false"/>
-        <Property Name="SERVICEID" Type="Edm.String" MaxLength="36" Nullable="false"/>
-        <Property Name="PREVIOUSCOMPONENT" Type="Edm.String" MaxLength="32" Nullable="false"/>
+        <Property Name="NAME1" Type="Edm.String" MaxLength="1024"/>
+        <Property Name="NAME2" Type="Edm.String" MaxLength="150"/>
+        <Property Name="USERNAME" Type="Edm.String" MaxLength="20"/>
+        <Property Name="CDATE" Type="Edm.DateTimeOffset" Nullable="false"/>
+        <Property Name="SERVICEID" Type="Edm.String" MaxLength="36"/>
+        <Property Name="PREVIOUSCOMPONENT" Type="Edm.String" MaxLength="32"/>
         <Property Name="INSTANCE" Type="Edm.String" MaxLength="40" Nullable="false"/>
-        <Property Name="SCLIENT" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="SCLIENT" Type="Edm.String" MaxLength="3"/>
         <Property Name="SID" Type="Edm.String" MaxLength="8" Nullable="false"/>
         <Property Name="SYSTEMTYPE" Type="Edm.String" MaxLength="10" Nullable="false"/>
-        <Property Name="EXECUTION" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="RESPTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="RESPTIMEMIN" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="RESPTIMEMAX" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="MEMORY" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="CPUTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="CPUTIMEMIN" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="CPUTIMEMAX" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="DBTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="DBTIMEMIN" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="DBTIMEMAX" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="WAITTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="WAITTIMEMIN" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="WAITTIMEMAX" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="NETTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="NETTIMEMIN" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="NETTIMEMAX" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="LENGTH" Type="Edm.Int32" Nullable="false"/>
-        <Property Name="CHAR1" Type="Edm.String" MaxLength="40" Nullable="false"/>
-        <Property Name="CHAR2" Type="Edm.String" MaxLength="100" Nullable="false"/>
-        <Property Name="NUM1" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="NUM2" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="NUM3" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="USERTYPE" Type="Edm.String" MaxLength="1" Nullable="false"/>
-        <Property Name="BYTES_RCVD" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="BYTES_SENT" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
+        <Property Name="EXECUTION" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="RESPTIME" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="RESPTIMEMIN" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="RESPTIMEMAX" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="MEMORY" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="CPUTIME" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="CPUTIMEMIN" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="CPUTIMEMAX" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="DBTIME" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="DBTIMEMIN" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="DBTIMEMAX" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="WAITTIME" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="WAITTIMEMIN" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="WAITTIMEMAX" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="NETTIME" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="NETTIMEMIN" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="NETTIMEMAX" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="LENGTH" Type="Edm.Int32"/>
+        <Property Name="USERTYPE" Type="Edm.String" MaxLength="1"/>
+        <Property Name="CHAR1" Type="Edm.String" MaxLength="40"/>
+        <Property Name="CHAR2" Type="Edm.String" MaxLength="100"/>
+        <Property Name="NUM1" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="NUM2" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="NUM3" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="BYTES_RCVD" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="BYTES_SENT" Type="Edm.Decimal" Scale="6" Precision="31"/>
       </EntityType>
       <EntityType Name="AGGRECOUT">
         <Key>
@@ -65,8 +63,8 @@
         <Property Name="NAME1" Type="Edm.String" MaxLength="150" Nullable="false"/>
         <Property Name="NAME2" Type="Edm.String" MaxLength="150" Nullable="false"/>
         <Property Name="USERNAME" Type="Edm.String" MaxLength="20" Nullable="false"/>
-        <Property Name="CDATE" Type="Edm.String" MaxLength="8" Nullable="false"/>
-        <Property Name="CTIME" Type="Edm.String" MaxLength="8" Nullable="false"/>
+        <Property Name="CDATE" Type="Edm.DateTime" Nullable="false" sap:display-format="Date"/>
+        <Property Name="CTIME" Type="Edm.Time" Nullable="false"/>
         <Property Name="SERVICEID" Type="Edm.String" MaxLength="36" Nullable="false"/>
         <Property Name="PREVIOUSCOMPONENT" Type="Edm.String" MaxLength="32" Nullable="false"/>
         <Property Name="INSTANCE" Type="Edm.String" MaxLength="40" Nullable="false"/>
@@ -84,58 +82,44 @@
         <Property Name="SENTBYTES" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
         <Property Name="RECEIVEDBYTES" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
       </EntityType>
-      <EntityType Name="Books">
+      <EntityType Name="SNGLRECIN">
         <Key>
           <PropertyRef Name="ID"/>
         </Key>
-        <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
-        <Property Name="title" Type="Edm.String"/>
-        <Property Name="stock" Type="Edm.Int32"/>
-      </EntityType>
-      <EntityType Name="SNGLRECIN">
-        <Key>
-          <PropertyRef Name="TRANSID"/>
-          <PropertyRef Name="CONNID"/>
-          <PropertyRef Name="CONNCOUNTER"/>
-          <PropertyRef Name="CDATE"/>
-          <PropertyRef Name="CTIME"/>
-          <PropertyRef Name="SERVICEID"/>
-        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
         <Property Name="TRANSID" Type="Edm.String" MaxLength="32" Nullable="false"/>
-        <Property Name="CONNID" Type="Edm.String" MaxLength="32" Nullable="false"/>
+        <Property Name="CONNID" Type="Edm.String" MaxLength="32"/>
         <Property Name="CONNCOUNTER" Type="Edm.Int32" Nullable="false"/>
-        <Property Name="CDATE" Type="Edm.String" MaxLength="8" Nullable="false"/>
-        <Property Name="CTIME" Type="Edm.String" MaxLength="8" Nullable="false"/>
-        <Property Name="SERVICEID" Type="Edm.String" MaxLength="36" Nullable="false"/>
+        <Property Name="CDATE" Type="Edm.DateTimeOffset" Nullable="false"/>
+        <Property Name="SERVICEID" Type="Edm.String" MaxLength="36"/>
         <Property Name="SID" Type="Edm.String" MaxLength="40" Nullable="false"/>
         <Property Name="SYSTEMTYPE" Type="Edm.String" MaxLength="10" Nullable="false"/>
         <Property Name="TYPE" Type="Edm.String" MaxLength="20" Nullable="false"/>
-        <Property Name="NAME1" Type="Edm.String" MaxLength="150" Nullable="false"/>
-        <Property Name="NAME2" Type="Edm.String" MaxLength="150" Nullable="false"/>
-        <Property Name="USERNAME" Type="Edm.String" MaxLength="20" Nullable="false"/>
-        <Property Name="SCLIENT" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="NAME1" Type="Edm.String" MaxLength="1024"/>
+        <Property Name="NAME2" Type="Edm.String" MaxLength="150"/>
+        <Property Name="USERNAME" Type="Edm.String" MaxLength="20"/>
+        <Property Name="SCLIENT" Type="Edm.String" MaxLength="3"/>
         <Property Name="INSTANCE" Type="Edm.String" MaxLength="100" Nullable="false"/>
-        <Property Name="ROOTCTXID" Type="Edm.String" MaxLength="32" Nullable="false"/>
-        <Property Name="COMPONENTID" Type="Edm.String" MaxLength="32" Nullable="false"/>
-        <Property Name="ACTION" Type="Edm.String" MaxLength="40" Nullable="false"/>
-        <Property Name="PREVIOUSCOMPONENT" Type="Edm.String" MaxLength="32" Nullable="false"/>
-        <Property Name="RESPTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="MEMORY" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="CPUTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="DBTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="WAITTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="NETTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="PARAMS" Type="Edm.String" MaxLength="255" Nullable="false"/>
+        <Property Name="ROOTCTXID" Type="Edm.String" MaxLength="32"/>
+        <Property Name="COMPONENTID" Type="Edm.String" MaxLength="32"/>
+        <Property Name="ACTION" Type="Edm.String" MaxLength="40"/>
+        <Property Name="PREVIOUSCOMPONENT" Type="Edm.String" MaxLength="32"/>
+        <Property Name="RESPTIME" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="MEMORY" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="CPUTIME" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="DBTIME" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="WAITTIME" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="NETTIME" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="PARAMS" Type="Edm.String" MaxLength="255"/>
         <Property Name="MS" Type="Edm.Int32" Nullable="false"/>
-        <Property Name="RATING" Type="Edm.Int32" Nullable="false"/>
-        <Property Name="USERTYPE" Type="Edm.String" MaxLength="1" Nullable="false"/>
-        <Property Name="CHAR1" Type="Edm.String" MaxLength="40" Nullable="false"/>
-        <Property Name="CHAR2" Type="Edm.String" MaxLength="100" Nullable="false"/>
-        <Property Name="NUM1" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="NUM2" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="NUM3" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="BYTES_RCVD" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
-        <Property Name="BYTES_SENT" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
+        <Property Name="USERTYPE" Type="Edm.String" MaxLength="1"/>
+        <Property Name="CHAR1" Type="Edm.String" MaxLength="40"/>
+        <Property Name="CHAR2" Type="Edm.String" MaxLength="100"/>
+        <Property Name="NUM1" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="NUM2" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="NUM3" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="BYTES_RCVD" Type="Edm.Decimal" Scale="6" Precision="31"/>
+        <Property Name="BYTES_SENT" Type="Edm.Decimal" Scale="6" Precision="31"/>
       </EntityType>
       <EntityType Name="SNGLRECOUT">
         <Key>
@@ -151,8 +135,8 @@
         <Property Name="TRANSID" Type="Edm.String" MaxLength="32" Nullable="false"/>
         <Property Name="CONNID" Type="Edm.String" MaxLength="32" Nullable="false"/>
         <Property Name="CONNCOUNTER" Type="Edm.Int32" Nullable="false"/>
-        <Property Name="CDATE" Type="Edm.String" MaxLength="8" Nullable="false"/>
-        <Property Name="CTIME" Type="Edm.String" MaxLength="8" Nullable="false"/>
+        <Property Name="CDATE" Type="Edm.DateTime" Nullable="false" sap:display-format="Date"/>
+        <Property Name="CTIME" Type="Edm.Time" Nullable="false"/>
         <Property Name="SERVICEID" Type="Edm.String" MaxLength="36" Nullable="false"/>
         <Property Name="CONNIDOUT" Type="Edm.String" MaxLength="32" Nullable="false"/>
         <Property Name="CONNCOUNTERCOUT" Type="Edm.Int32" Nullable="false"/>
@@ -185,23 +169,6 @@
         </Annotation>
       </Annotations>
       <Annotations Target="PerformanceDataService.EntityContainer/AGGRECOUT" xmlns="http://docs.oasis-open.org/odata/ns/edm">
-        <Annotation Term="Capabilities.DeleteRestrictions">
-          <Record Type="Capabilities.DeleteRestrictionsType">
-            <PropertyValue Property="Deletable" Bool="false"/>
-          </Record>
-        </Annotation>
-        <Annotation Term="Capabilities.InsertRestrictions">
-          <Record Type="Capabilities.InsertRestrictionsType">
-            <PropertyValue Property="Insertable" Bool="false"/>
-          </Record>
-        </Annotation>
-        <Annotation Term="Capabilities.UpdateRestrictions">
-          <Record Type="Capabilities.UpdateRestrictionsType">
-            <PropertyValue Property="Updatable" Bool="false"/>
-          </Record>
-        </Annotation>
-      </Annotations>
-      <Annotations Target="PerformanceDataService.EntityContainer/Books" xmlns="http://docs.oasis-open.org/odata/ns/edm">
         <Annotation Term="Capabilities.DeleteRestrictions">
           <Record Type="Capabilities.DeleteRestrictionsType">
             <PropertyValue Property="Deletable" Bool="false"/>

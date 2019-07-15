@@ -1,0 +1,62 @@
+<mvc:View controllerName="app.controller.App" 
+   xmlns:mvc="sap.ui.core.mvc" 
+   xmlns:core="sap.ui.core"
+   xmlns="sap.m"
+   xmlns:uit="sap.ui.table"
+   height="100%">
+	
+	<Shell id="shell">
+	<App>
+	    	 
+	    <Page title="Page Title Here!">
+	    	<content>	
+	    	<uit:Table id="tableOrder" selectionMode="MultiToggle" rows="{/SNGLRECOUT}" visibleRowCount="30">
+				<uit:columns>
+					<uit:Column  width="20rem" sortProperty="TRANSID">
+						<Label text="TRANSACTION ID" />
+						<uit:template>
+							<Text text="{TRANSID}" wrapping="false"/>
+						</uit:template>
+					</uit:Column>
+					<uit:Column width="20rem" showSortMenuEntry="true" sortProperty="CONNID">
+						<Label text="CONN ID"/>
+						<uit:template>
+							<Text text="{CONNID}" wrapping="false" />
+						</uit:template>
+					</uit:Column>
+					<uit:Column width="20rem" sortProperty="SERVICEID">
+						<Label text="SERVICE ID" />
+						<uit:template>
+							<Text text="{SERVICEID}"/>
+						</uit:template>
+					</uit:Column>
+					<uit:Column width="8rem" sortProperty="NAME1">
+						<Label text="NAME1" />
+						<uit:template>
+							<Label text="{NAME1}" />
+						</uit:template>
+					</uit:Column>
+					<uit:Column width="8rem" sortProperty="NAME2">
+						<Label text="NAME2" />
+						<uit:template>
+							<Text text="{NAME2}" wrapping="false" />
+						</uit:template>
+					</uit:Column>
+				</uit:columns>
+			</uit:Table>
+
+	      <Button text="New SNGLRECOUT" press="onNew1"/>
+	      <Button text="Delete SNGLRECOUT" press="onDelete1"/>
+	      <Button text="Update SNGLRECOUT" press="onUpdateO1"/>
+	      
+
+	      
+	</content>
+	
+</Page>
+</App>
+</Shell>
+
+
+
+</mvc:View>
