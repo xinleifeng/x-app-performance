@@ -738,9 +738,6 @@
     },
     "PerformanceDataService.SNGLRECOUT": {
       "kind": "entity",
-      "@Capabilities.DeleteRestrictions.Deletable": false,
-      "@Capabilities.InsertRestrictions.Insertable": false,
-      "@Capabilities.UpdateRestrictions.Updatable": false,
       "@Catalog.index": [
         {
           "name": "SNGLRECOUT_INDEX",
@@ -757,7 +754,6 @@
         "#": "COLUMN"
       },
       "@cds.persistence.name": "PERFORMANCEDATASERVICE_SNGLRECOUT",
-      "@readonly": true,
       "query": {
         "SELECT": {
           "from": {

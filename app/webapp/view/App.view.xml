@@ -10,7 +10,7 @@
 	    	 
 	    <Page title="Page Title Here!">
 	    	<content>	
-	    	<uit:Table id="tableOrder" selectionMode="MultiToggle" rows="{/SNGLRECOUT}" visibleRowCount="30">
+	    	<uit:Table id="table1" selectionMode="MultiToggle" rows="{/SNGLRECOUT}" visibleRowCount="30">
 				<uit:columns>
 					<uit:Column  width="20rem" sortProperty="TRANSID">
 						<Label text="TRANSACTION ID" />
@@ -30,6 +30,12 @@
 							<Text text="{SERVICEID}"/>
 						</uit:template>
 					</uit:Column>
+					<uit:Column width="5rem" sortProperty="CALLINGTIME">
+						<Label text="C Time" />
+						<uit:template>
+							<Text text="{CALLINGTIME}"/>
+						</uit:template>
+					</uit:Column>
 					<uit:Column width="8rem" sortProperty="NAME1">
 						<Label text="NAME1" />
 						<uit:template>
@@ -47,7 +53,7 @@
 
 	      <Button text="New SNGLRECOUT" press="onNew1"/>
 	      <Button text="Delete SNGLRECOUT" press="onDelete1"/>
-	      <Button text="Update SNGLRECOUT" press="onUpdateO1"/>
+	      <Button text="Update SNGLRECOUT" press="onUpdate"/>
 	      
 
 	      

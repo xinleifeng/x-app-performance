@@ -46,16 +46,16 @@ sap.ui.define([
 		   this.getView().getModel().refresh();
 		},
 
-		onDeleteOrder : function (oEvent) {
+		onDelete1 : function (oEvent) {
 			//var nametoShow = this.oView.getModel().oData.recipient.name;
 			//MessageToast.show(nametoShow);
-			var oTable = this.getView().byId("tableOrder");
+			var oTable = this.getView().byId("table1");
 			var oModel = this.getView().getModel();
 			var leng = oTable.getSelectedIndices().length;
 			for(var i=0; i<leng; i++ ) {
 				var idx = oTable.getSelectedIndices()[i];
 				var orderId = oTable.getRows()[idx].getCells()[0].getText();
-				oModel.remove("/Orders(guid'" + orderId  + "')", 
+				oModel.remove("/SNGLRECOUT(guid'" + orderId  + "')", 
 				    {
 				    	success: function(data) {
 				    		console.log(data);
@@ -69,16 +69,18 @@ sap.ui.define([
 			oModel.refresh();
 			oTable.setSelectedIndex(-1);
 		},
-		onUpdateOrder : function (oEvent) {
+		onUpdate: function (oEvent) {
 			
-			var oTable = this.getView().byId("tableOrder");
+			var oTable = this.getView().byId("table1");
 			var oModel = this.getView().getModel();
 			var leng = oTable.getSelectedIndices().length;
 			if(leng === 1) {
 				var idx = oTable.getSelectedIndex();
 				var orderId = oTable.getRows()[idx].getCells()[0].getText();
+			}
 				
-				var oEntry = {};
+			/*
+			var oEntry = {};
 				var oNow = new Date();  //.now();
 			
 		        oEntry.buyer = "Buyer Update";
@@ -101,6 +103,7 @@ sap.ui.define([
 				MessageToast.show("Select only one row");
 			}
 			oModel.refresh();
+			*/
 		}
 	});
 

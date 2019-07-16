@@ -1,3 +1,4 @@
+app/webapp/localService/metadata.xml
 db/src/gen/.hdinamespace
 db/src/gen/PERFORMANCEDATASERVICE_AGGRECIN.hdbcds
 db/src/gen/PERFORMANCEDATASERVICE_AGGRECOUT.hdbcds
