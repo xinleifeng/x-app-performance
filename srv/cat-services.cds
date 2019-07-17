@@ -2,6 +2,7 @@ using sap.crun.performance as my from '../db/data-model';
 
 service PerformanceDataService {
     entity SNGLRECOUT as projection on my.SNGLRECOUT;
+    entity SNGLRECOUTA as projection on my.SNGLRECOUTA;
     @readonly entity SNGLRECIN as projection on my.SNGLRECIN;
     @readonly entity AGGRECOUT as projection on my.AGGRECOUT;
     @readonly entity AGGRECIN as projection on my.AGGRECIN;

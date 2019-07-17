@@ -30,6 +30,24 @@
 					"RECEIVEDBYTES"
 				]
 			}
+		},
+		{
+			"target_table": "SAP_CRUN_PERFORMANCE_SNGLRECOUTA",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "SNGLRECOUTA.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"TRANSID",
+					"CDATE",
+					"CTIME",
+					"CONNCOUNTERCOUT",
+					"NAME1",
+					"CALLINGTIME"
+				]
+			}
 		}
 	]
 }

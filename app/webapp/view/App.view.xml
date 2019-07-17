@@ -12,48 +12,80 @@
 	    	<content>	
 	    	<uit:Table id="table1" selectionMode="MultiToggle" rows="{/SNGLRECOUT}" visibleRowCount="30">
 				<uit:columns>
-					<uit:Column  width="20rem" sortProperty="TRANSID">
+					
+					<uit:Column  width="18rem" sortProperty="TRANSID">
 						<Label text="TRANSACTION ID" />
 						<uit:template>
-							<Text text="{TRANSID}" wrapping="false"/>
+							<Text text="{TRANSID}" wrapping="false" tooltip="{TRANSID}"/>
 						</uit:template>
 					</uit:Column>
-					<uit:Column width="20rem" showSortMenuEntry="true" sortProperty="CONNID">
-						<Label text="CONN ID"/>
+					<uit:Column width="5rem" showSortMenuEntry="true" sortProperty="CONNID">
+						<Label text="CONNID"/>
 						<uit:template>
-							<Text text="{CONNID}" wrapping="false" />
+							<Text text="{CONNID}" wrapping="false" tooltip="{CONNID}"/>
 						</uit:template>
 					</uit:Column>
-					<uit:Column width="20rem" sortProperty="SERVICEID">
-						<Label text="SERVICE ID" />
+					
+					<uit:Column width="5rem" showSortMenuEntry="true" sortProperty="CONNCOUNTER">
+						<Label text="CONNCOUNTER"/>
 						<uit:template>
-							<Text text="{SERVICEID}"/>
+							<Text text="{CONNCOUNTER}" wrapping="false"/>
 						</uit:template>
 					</uit:Column>
-					<uit:Column width="5rem" sortProperty="CALLINGTIME">
-						<Label text="C Time" />
+					
+					<uit:Column width="18rem" sortProperty="CDATE">
+						<Label text="CDATE"/>
 						<uit:template>
-							<Text text="{CALLINGTIME}"/>
+							<Text text="{CDATE}"/>
 						</uit:template>
 					</uit:Column>
-					<uit:Column width="8rem" sortProperty="NAME1">
+					
+					<uit:Column width="5rem" sortProperty="CTIME">
+						<Label text="CTIME"/>
+						<uit:template>
+							<Text text="{CTIME}" wrapping="false"/>
+						</uit:template>
+					</uit:Column>
+					<uit:Column width="5rem" sortProperty="SERVICEID">
+						<Label text="SERVICE ID"/>
+						<uit:template>
+							<Text text="{SERVICEID}" wrapping="false" tooltip="{SERVICEID}"/>
+						</uit:template>
+					</uit:Column>
+					<uit:Column width="5rem" sortProperty="CONNIDOUT">
+						<Label text="CONNIDOUT" />
+						<uit:template>
+							<Text text="{CONNIDOUT}" wrapping="false" tooltip="{CONNIDOUT}"/>
+						</uit:template>
+					</uit:Column>
+					
+					<uit:Column width="3rem" sortProperty="CONNCOUNTERCOUT">
+						<Label text="CONNCOUNTERCOUT" />
+						<uit:template>
+					    	<Label text="{CONNCOUNTERCOUT}" wrapping="false"/>
+						</uit:template>
+					</uit:Column>
+					
+					<uit:Column width="4rem" sortProperty="SID">
+						<Label text="SID" />
+						<uit:template>
+							<Label text="{SID}" wrapping="false" tooltip="{SID}"/>
+						</uit:template>
+					</uit:Column>					
+					<uit:Column width="4rem" sortProperty="NAME1">
 						<Label text="NAME1" />
 						<uit:template>
-							<Label text="{NAME1}" />
+							<Label text="{NAME1}" wrapping="false" tooltip="{NAME1}"/>
 						</uit:template>
 					</uit:Column>
-					<uit:Column width="8rem" sortProperty="NAME2">
-						<Label text="NAME2" />
-						<uit:template>
-							<Text text="{NAME2}" wrapping="false" />
-						</uit:template>
-					</uit:Column>
+					
+
 				</uit:columns>
 			</uit:Table>
 
 	      <Button text="New SNGLRECOUT" press="onNew1"/>
 	      <Button text="Delete SNGLRECOUT" press="onDelete1"/>
-	      <Button text="Update SNGLRECOUT" press="onUpdate"/>
+	      <Button text="Update SNGLRECOUT" press="onUpdate1"/>
 	      
 
 	      

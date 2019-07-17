@@ -7,7 +7,7 @@ entity SNGLRECOUT {
   key CONNID		  : String(32) not null default '';
   key CONNCOUNTER	  : Integer not null default 0;
   key CDATE 		  : Date not null;
-  key CTIME 		  : Time not null;
+  CTIME 		  : Time;
   key SERVICEID 	  : String(36) not null default '';
   key CONNIDOUT 	  : String(32) not null default '';
   key CONNCOUNTERCOUT : Integer not null default 0;
@@ -23,6 +23,17 @@ entity SNGLRECOUT {
   RECEIVEDBYTES 	  : Decimal(31,6) not null default 0;
 }  
 
+
+@Catalog.tableType: #COLUMN 
+@Catalog.index: [ { name : 'SNGLRECOUTA_INDEX', unique : false, order : #DESC, elementNames : ['TRANSID'] }  ]  
+entity SNGLRECOUTA {
+  key TRANSID         : String(32) not null default '';
+  CDATE 		  : Date not null;
+  CTIME 		  : Time not null;
+  CONNCOUNTERCOUT : Integer not null default 0;
+  NAME1 			  : String(150) not null default '';
+  CALLINGTIME		  : Decimal(31,6) not null default 0;
+}  
   
 @Catalog.tableType: #COLUMN 
 @Catalog.index: [ { name : 'SNGLRECIN_INDEX', unique : false, order : #DESC, elementNames : ['TRANSID'] }  ]  
@@ -90,6 +101,7 @@ entity AGGRECOUT {
   SENTBYTES 		  : Decimal(31,6) not null default 0;
   RECEIVEDBYTES 	  : Decimal(31,6) not null default 0;
 }
+
 
 @Catalog.tableType: #COLUMN 
 @Catalog.index: [ { name : 'AGGRECIN_INDEX', unique : false, order : #DESC, elementNames : ['TYPE','NAME1'] }  ]  

@@ -10,6 +10,7 @@
         <EntitySet Name="AGGRECOUT" EntityType="PerformanceDataService.AGGRECOUT"/>
         <EntitySet Name="SNGLRECIN" EntityType="PerformanceDataService.SNGLRECIN"/>
         <EntitySet Name="SNGLRECOUT" EntityType="PerformanceDataService.SNGLRECOUT"/>
+        <EntitySet Name="SNGLRECOUTA" EntityType="PerformanceDataService.SNGLRECOUTA"/>
       </EntityContainer>
       <EntityType Name="AGGRECIN">
         <Key>
@@ -127,7 +128,6 @@
           <PropertyRef Name="CONNID"/>
           <PropertyRef Name="CONNCOUNTER"/>
           <PropertyRef Name="CDATE"/>
-          <PropertyRef Name="CTIME"/>
           <PropertyRef Name="SERVICEID"/>
           <PropertyRef Name="CONNIDOUT"/>
           <PropertyRef Name="CONNCOUNTERCOUT"/>
@@ -136,7 +136,7 @@
         <Property Name="CONNID" Type="Edm.String" MaxLength="32" Nullable="false"/>
         <Property Name="CONNCOUNTER" Type="Edm.Int32" Nullable="false"/>
         <Property Name="CDATE" Type="Edm.DateTime" Nullable="false" sap:display-format="Date"/>
-        <Property Name="CTIME" Type="Edm.Time" Nullable="false"/>
+        <Property Name="CTIME" Type="Edm.Time"/>
         <Property Name="SERVICEID" Type="Edm.String" MaxLength="36" Nullable="false"/>
         <Property Name="CONNIDOUT" Type="Edm.String" MaxLength="32" Nullable="false"/>
         <Property Name="CONNCOUNTERCOUT" Type="Edm.Int32" Nullable="false"/>
@@ -150,6 +150,17 @@
         <Property Name="CALLINGTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
         <Property Name="SENTBYTES" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
         <Property Name="RECEIVEDBYTES" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="SNGLRECOUTA">
+        <Key>
+          <PropertyRef Name="TRANSID"/>
+        </Key>
+        <Property Name="TRANSID" Type="Edm.String" MaxLength="32" Nullable="false"/>
+        <Property Name="CDATE" Type="Edm.DateTime" Nullable="false" sap:display-format="Date"/>
+        <Property Name="CTIME" Type="Edm.Time" Nullable="false"/>
+        <Property Name="CONNCOUNTERCOUT" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="NAME1" Type="Edm.String" MaxLength="150" Nullable="false"/>
+        <Property Name="CALLINGTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
       </EntityType>
       <Annotations Target="PerformanceDataService.EntityContainer/AGGRECIN" xmlns="http://docs.oasis-open.org/odata/ns/edm">
         <Annotation Term="Capabilities.DeleteRestrictions">

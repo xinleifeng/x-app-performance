@@ -801,9 +801,7 @@
         },
         "CTIME": {
           "@cds.persistence.name": "CTIME",
-          "key": true,
-          "type": "cds.Time",
-          "notNull": true
+          "type": "cds.Time"
         },
         "SERVICEID": {
           "@cds.persistence.name": "SERVICEID",
@@ -919,6 +917,84 @@
         },
         "RECEIVEDBYTES": {
           "@cds.persistence.name": "RECEIVEDBYTES",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        }
+      },
+      "$syntax": "projection"
+    },
+    "PerformanceDataService.SNGLRECOUTA": {
+      "kind": "entity",
+      "@Catalog.index": [
+        {
+          "name": "SNGLRECOUTA_INDEX",
+          "unique": false,
+          "order": {
+            "#": "DESC"
+          },
+          "elementNames": [
+            "TRANSID"
+          ]
+        }
+      ],
+      "@Catalog.tableType": {
+        "#": "COLUMN"
+      },
+      "@cds.persistence.name": "PERFORMANCEDATASERVICE_SNGLRECOUTA",
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "sap.crun.performance.SNGLRECOUTA"
+            ]
+          }
+        }
+      },
+      "elements": {
+        "TRANSID": {
+          "@cds.persistence.name": "TRANSID",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CDATE": {
+          "@cds.persistence.name": "CDATE",
+          "type": "cds.Date",
+          "notNull": true
+        },
+        "CTIME": {
+          "@cds.persistence.name": "CTIME",
+          "type": "cds.Time",
+          "notNull": true
+        },
+        "CONNCOUNTERCOUT": {
+          "@cds.persistence.name": "CONNCOUNTERCOUT",
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NAME1": {
+          "@cds.persistence.name": "NAME1",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CALLINGTIME": {
+          "@cds.persistence.name": "CALLINGTIME",
           "type": "cds.Decimal",
           "precision": 31,
           "scale": 6,
@@ -1677,9 +1753,7 @@
         },
         "CTIME": {
           "@cds.persistence.name": "CTIME",
-          "key": true,
-          "type": "cds.Time",
-          "notNull": true
+          "type": "cds.Time"
         },
         "SERVICEID": {
           "@cds.persistence.name": "SERVICEID",
@@ -1795,6 +1869,74 @@
         },
         "RECEIVEDBYTES": {
           "@cds.persistence.name": "RECEIVEDBYTES",
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 6,
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        }
+      }
+    },
+    "sap.crun.performance.SNGLRECOUTA": {
+      "kind": "entity",
+      "@Catalog.index": [
+        {
+          "name": "SNGLRECOUTA_INDEX",
+          "unique": false,
+          "order": {
+            "#": "DESC"
+          },
+          "elementNames": [
+            "TRANSID"
+          ]
+        }
+      ],
+      "@Catalog.tableType": {
+        "#": "COLUMN"
+      },
+      "@cds.persistence.name": "SAP_CRUN_PERFORMANCE_SNGLRECOUTA",
+      "elements": {
+        "TRANSID": {
+          "@cds.persistence.name": "TRANSID",
+          "key": true,
+          "type": "cds.String",
+          "length": 32,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CDATE": {
+          "@cds.persistence.name": "CDATE",
+          "type": "cds.Date",
+          "notNull": true
+        },
+        "CTIME": {
+          "@cds.persistence.name": "CTIME",
+          "type": "cds.Time",
+          "notNull": true
+        },
+        "CONNCOUNTERCOUT": {
+          "@cds.persistence.name": "CONNCOUNTERCOUT",
+          "type": "cds.Integer",
+          "notNull": true,
+          "default": {
+            "val": 0
+          }
+        },
+        "NAME1": {
+          "@cds.persistence.name": "NAME1",
+          "type": "cds.String",
+          "length": 150,
+          "notNull": true,
+          "default": {
+            "val": ""
+          }
+        },
+        "CALLINGTIME": {
+          "@cds.persistence.name": "CALLINGTIME",
           "type": "cds.Decimal",
           "precision": 31,
           "scale": 6,
