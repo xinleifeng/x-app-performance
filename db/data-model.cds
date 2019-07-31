@@ -7,7 +7,7 @@ entity SNGLRECOUT {
   key CONNID		  : String(32) not null default '';
   key CONNCOUNTER	  : Integer not null default 0;
   key CDATE 		  : Date not null;
-  CTIME 		  : Time;
+  key CTIME 		  : Time not null;
   key SERVICEID 	  : String(36) not null default '';
   key CONNIDOUT 	  : String(32) not null default '';
   key CONNCOUNTERCOUT : Integer not null default 0;
@@ -25,24 +25,13 @@ entity SNGLRECOUT {
 
 
 @Catalog.tableType: #COLUMN 
-@Catalog.index: [ { name : 'SNGLRECOUTA_INDEX', unique : false, order : #DESC, elementNames : ['TRANSID'] }  ]  
-entity SNGLRECOUTA {
-  key TRANSID         : String(32) not null default '';
-  CDATE 		  : Date not null;
-  CTIME 		  : Time not null;
-  CONNCOUNTERCOUT : Integer not null default 0;
-  NAME1 			  : String(150) not null default '';
-  CALLINGTIME		  : Decimal(31,6) not null default 0;
-}  
-  
-@Catalog.tableType: #COLUMN 
 @Catalog.index: [ { name : 'SNGLRECIN_INDEX', unique : false, order : #DESC, elementNames : ['TRANSID'] }  ]  
 entity SNGLRECIN {
-  key ID			  : UUID;
+  key ID			  : Integer64;
   TRANSID       	  : String(32) not null default '';
   CONNID			  : String(32);
   CONNCOUNTER		  : Integer not null default 0;
-  CDATE 			  : DateTime not null;
+  INSERTED_AT		  : DateTime not null;
   SERVICEID 		  : String(36);
   SID				  : String(40) not null default '';
   SYSTEMTYPE		  : String(10) not null default '';
@@ -102,16 +91,15 @@ entity AGGRECOUT {
   RECEIVEDBYTES 	  : Decimal(31,6) not null default 0;
 }
 
-
 @Catalog.tableType: #COLUMN 
 @Catalog.index: [ { name : 'AGGRECIN_INDEX', unique : false, order : #DESC, elementNames : ['TYPE','NAME1'] }  ]  
 entity AGGRECIN {
-  key ID			  : UUID;
+  key ID			  : Integer64;
   TYPE                : String(3) not null;
   NAME1 		      : String(1024);
   NAME2 			  : String(150);
   USERNAME  		  : String(20);
-  CDATE 			  : DateTime not null;
+  INSERTED_AT		  : DateTime not null;
   SERVICEID 		  : String(36);
   PREVIOUSCOMPONENT   : String(32);
   INSTANCE  		  : String(40) not null default '';

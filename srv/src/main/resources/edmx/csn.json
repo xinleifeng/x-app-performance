@@ -5,9 +5,6 @@
     },
     "PerformanceDataService.AGGRECIN": {
       "kind": "entity",
-      "@Capabilities.DeleteRestrictions.Deletable": false,
-      "@Capabilities.InsertRestrictions.Insertable": false,
-      "@Capabilities.UpdateRestrictions.Updatable": false,
       "@Catalog.index": [
         {
           "name": "AGGRECIN_INDEX",
@@ -25,7 +22,6 @@
         "#": "COLUMN"
       },
       "@cds.persistence.name": "PERFORMANCEDATASERVICE_AGGRECIN",
-      "@readonly": true,
       "query": {
         "SELECT": {
           "from": {
@@ -39,7 +35,7 @@
         "ID": {
           "@cds.persistence.name": "ID",
           "key": true,
-          "type": "cds.UUID"
+          "type": "cds.Integer64"
         },
         "TYPE": {
           "@cds.persistence.name": "TYPE",
@@ -62,8 +58,8 @@
           "type": "cds.String",
           "length": 20
         },
-        "CDATE": {
-          "@cds.persistence.name": "CDATE",
+        "INSERTED_AT": {
+          "@cds.persistence.name": "INSERTED_AT",
           "type": "cds.DateTime",
           "notNull": true
         },
@@ -265,9 +261,6 @@
     },
     "PerformanceDataService.AGGRECOUT": {
       "kind": "entity",
-      "@Capabilities.DeleteRestrictions.Deletable": false,
-      "@Capabilities.InsertRestrictions.Insertable": false,
-      "@Capabilities.UpdateRestrictions.Updatable": false,
       "@Catalog.index": [
         {
           "name": "AGGRECOUT_INDEX",
@@ -285,7 +278,6 @@
         "#": "COLUMN"
       },
       "@cds.persistence.name": "PERFORMANCEDATASERVICE_AGGRECOUT",
-      "@readonly": true,
       "query": {
         "SELECT": {
           "from": {
@@ -499,9 +491,6 @@
     },
     "PerformanceDataService.SNGLRECIN": {
       "kind": "entity",
-      "@Capabilities.DeleteRestrictions.Deletable": false,
-      "@Capabilities.InsertRestrictions.Insertable": false,
-      "@Capabilities.UpdateRestrictions.Updatable": false,
       "@Catalog.index": [
         {
           "name": "SNGLRECIN_INDEX",
@@ -518,7 +507,6 @@
         "#": "COLUMN"
       },
       "@cds.persistence.name": "PERFORMANCEDATASERVICE_SNGLRECIN",
-      "@readonly": true,
       "query": {
         "SELECT": {
           "from": {
@@ -532,7 +520,7 @@
         "ID": {
           "@cds.persistence.name": "ID",
           "key": true,
-          "type": "cds.UUID"
+          "type": "cds.Integer64"
         },
         "TRANSID": {
           "@cds.persistence.name": "TRANSID",
@@ -556,8 +544,8 @@
             "val": 0
           }
         },
-        "CDATE": {
-          "@cds.persistence.name": "CDATE",
+        "INSERTED_AT": {
+          "@cds.persistence.name": "INSERTED_AT",
           "type": "cds.DateTime",
           "notNull": true
         },
@@ -801,7 +789,9 @@
         },
         "CTIME": {
           "@cds.persistence.name": "CTIME",
-          "type": "cds.Time"
+          "key": true,
+          "type": "cds.Time",
+          "notNull": true
         },
         "SERVICEID": {
           "@cds.persistence.name": "SERVICEID",
@@ -928,80 +918,33 @@
       },
       "$syntax": "projection"
     },
-    "PerformanceDataService.SNGLRECOUTA": {
+    "PerformanceDataService.STATUS_OVERVIEW": {
       "kind": "entity",
-      "@Catalog.index": [
-        {
-          "name": "SNGLRECOUTA_INDEX",
-          "unique": false,
-          "order": {
-            "#": "DESC"
-          },
-          "elementNames": [
-            "TRANSID"
-          ]
-        }
-      ],
-      "@Catalog.tableType": {
-        "#": "COLUMN"
-      },
-      "@cds.persistence.name": "PERFORMANCEDATASERVICE_SNGLRECOUTA",
+      "@Capabilities.DeleteRestrictions.Deletable": false,
+      "@Capabilities.InsertRestrictions.Insertable": false,
+      "@Capabilities.UpdateRestrictions.Updatable": false,
+      "@cds.persistence.name": "PERFORMANCEDATASERVICE_STATUS_OVERVIEW",
+      "@cds.persistence.skip": true,
+      "@readonly": true,
       "query": {
         "SELECT": {
           "from": {
             "ref": [
-              "sap.crun.performance.SNGLRECOUTA"
+              "sap.crun.performance.STATUS_OVERVIEW"
             ]
           }
         }
       },
       "elements": {
-        "TRANSID": {
-          "@cds.persistence.name": "TRANSID",
+        "Type": {
+          "@cds.persistence.name": "TYPE",
           "key": true,
           "type": "cds.String",
-          "length": 32,
-          "notNull": true,
-          "default": {
-            "val": ""
-          }
+          "length": 3
         },
-        "CDATE": {
-          "@cds.persistence.name": "CDATE",
-          "type": "cds.Date",
-          "notNull": true
-        },
-        "CTIME": {
-          "@cds.persistence.name": "CTIME",
-          "type": "cds.Time",
-          "notNull": true
-        },
-        "CONNCOUNTERCOUT": {
-          "@cds.persistence.name": "CONNCOUNTERCOUT",
-          "type": "cds.Integer",
-          "notNull": true,
-          "default": {
-            "val": 0
-          }
-        },
-        "NAME1": {
-          "@cds.persistence.name": "NAME1",
-          "type": "cds.String",
-          "length": 150,
-          "notNull": true,
-          "default": {
-            "val": ""
-          }
-        },
-        "CALLINGTIME": {
-          "@cds.persistence.name": "CALLINGTIME",
-          "type": "cds.Decimal",
-          "precision": 31,
-          "scale": 6,
-          "notNull": true,
-          "default": {
-            "val": 0
-          }
+        "Count": {
+          "@cds.persistence.name": "COUNT",
+          "type": "cds.Integer"
         }
       },
       "$syntax": "projection"
@@ -1029,7 +972,7 @@
         "ID": {
           "@cds.persistence.name": "ID",
           "key": true,
-          "type": "cds.UUID"
+          "type": "cds.Integer64"
         },
         "TYPE": {
           "@cds.persistence.name": "TYPE",
@@ -1052,8 +995,8 @@
           "type": "cds.String",
           "length": 20
         },
-        "CDATE": {
-          "@cds.persistence.name": "CDATE",
+        "INSERTED_AT": {
+          "@cds.persistence.name": "INSERTED_AT",
           "type": "cds.DateTime",
           "notNull": true
         },
@@ -1494,7 +1437,7 @@
         "ID": {
           "@cds.persistence.name": "ID",
           "key": true,
-          "type": "cds.UUID"
+          "type": "cds.Integer64"
         },
         "TRANSID": {
           "@cds.persistence.name": "TRANSID",
@@ -1518,8 +1461,8 @@
             "val": 0
           }
         },
-        "CDATE": {
-          "@cds.persistence.name": "CDATE",
+        "INSERTED_AT": {
+          "@cds.persistence.name": "INSERTED_AT",
           "type": "cds.DateTime",
           "notNull": true
         },
@@ -1753,7 +1696,9 @@
         },
         "CTIME": {
           "@cds.persistence.name": "CTIME",
-          "type": "cds.Time"
+          "key": true,
+          "type": "cds.Time",
+          "notNull": true
         },
         "SERVICEID": {
           "@cds.persistence.name": "SERVICEID",
@@ -1869,74 +1814,6 @@
         },
         "RECEIVEDBYTES": {
           "@cds.persistence.name": "RECEIVEDBYTES",
-          "type": "cds.Decimal",
-          "precision": 31,
-          "scale": 6,
-          "notNull": true,
-          "default": {
-            "val": 0
-          }
-        }
-      }
-    },
-    "sap.crun.performance.SNGLRECOUTA": {
-      "kind": "entity",
-      "@Catalog.index": [
-        {
-          "name": "SNGLRECOUTA_INDEX",
-          "unique": false,
-          "order": {
-            "#": "DESC"
-          },
-          "elementNames": [
-            "TRANSID"
-          ]
-        }
-      ],
-      "@Catalog.tableType": {
-        "#": "COLUMN"
-      },
-      "@cds.persistence.name": "SAP_CRUN_PERFORMANCE_SNGLRECOUTA",
-      "elements": {
-        "TRANSID": {
-          "@cds.persistence.name": "TRANSID",
-          "key": true,
-          "type": "cds.String",
-          "length": 32,
-          "notNull": true,
-          "default": {
-            "val": ""
-          }
-        },
-        "CDATE": {
-          "@cds.persistence.name": "CDATE",
-          "type": "cds.Date",
-          "notNull": true
-        },
-        "CTIME": {
-          "@cds.persistence.name": "CTIME",
-          "type": "cds.Time",
-          "notNull": true
-        },
-        "CONNCOUNTERCOUT": {
-          "@cds.persistence.name": "CONNCOUNTERCOUT",
-          "type": "cds.Integer",
-          "notNull": true,
-          "default": {
-            "val": 0
-          }
-        },
-        "NAME1": {
-          "@cds.persistence.name": "NAME1",
-          "type": "cds.String",
-          "length": 150,
-          "notNull": true,
-          "default": {
-            "val": ""
-          }
-        },
-        "CALLINGTIME": {
-          "@cds.persistence.name": "CALLINGTIME",
           "type": "cds.Decimal",
           "precision": 31,
           "scale": 6,

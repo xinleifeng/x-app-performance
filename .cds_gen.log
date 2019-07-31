@@ -4,11 +4,9 @@ db/src/gen/PERFORMANCEDATASERVICE_AGGRECIN.hdbcds
 db/src/gen/PERFORMANCEDATASERVICE_AGGRECOUT.hdbcds
 db/src/gen/PERFORMANCEDATASERVICE_SNGLRECIN.hdbcds
 db/src/gen/PERFORMANCEDATASERVICE_SNGLRECOUT.hdbcds
-db/src/gen/PERFORMANCEDATASERVICE_SNGLRECOUTA.hdbcds
 db/src/gen/SAP_CRUN_PERFORMANCE_AGGRECIN.hdbcds
 db/src/gen/SAP_CRUN_PERFORMANCE_AGGRECOUT.hdbcds
 db/src/gen/SAP_CRUN_PERFORMANCE_SNGLRECIN.hdbcds
 db/src/gen/SAP_CRUN_PERFORMANCE_SNGLRECOUT.hdbcds
-db/src/gen/SAP_CRUN_PERFORMANCE_SNGLRECOUTA.hdbcds
 srv/src/main/resources/edmx/PerformanceDataService.xml
 srv/src/main/resources/edmx/csn.json

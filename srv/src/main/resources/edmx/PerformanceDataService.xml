@@ -10,18 +10,18 @@
         <EntitySet Name="AGGRECOUT" EntityType="PerformanceDataService.AGGRECOUT"/>
         <EntitySet Name="SNGLRECIN" EntityType="PerformanceDataService.SNGLRECIN"/>
         <EntitySet Name="SNGLRECOUT" EntityType="PerformanceDataService.SNGLRECOUT"/>
-        <EntitySet Name="SNGLRECOUTA" EntityType="PerformanceDataService.SNGLRECOUTA"/>
+        <EntitySet Name="STATUS_OVERVIEW" EntityType="PerformanceDataService.STATUS_OVERVIEW"/>
       </EntityContainer>
       <EntityType Name="AGGRECIN">
         <Key>
           <PropertyRef Name="ID"/>
         </Key>
-        <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="ID" Type="Edm.Int64" Nullable="false"/>
         <Property Name="TYPE" Type="Edm.String" MaxLength="3" Nullable="false"/>
         <Property Name="NAME1" Type="Edm.String" MaxLength="1024"/>
         <Property Name="NAME2" Type="Edm.String" MaxLength="150"/>
         <Property Name="USERNAME" Type="Edm.String" MaxLength="20"/>
-        <Property Name="CDATE" Type="Edm.DateTimeOffset" Nullable="false"/>
+        <Property Name="INSERTED_AT" Type="Edm.DateTimeOffset" Nullable="false"/>
         <Property Name="SERVICEID" Type="Edm.String" MaxLength="36"/>
         <Property Name="PREVIOUSCOMPONENT" Type="Edm.String" MaxLength="32"/>
         <Property Name="INSTANCE" Type="Edm.String" MaxLength="40" Nullable="false"/>
@@ -87,11 +87,11 @@
         <Key>
           <PropertyRef Name="ID"/>
         </Key>
-        <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="ID" Type="Edm.Int64" Nullable="false"/>
         <Property Name="TRANSID" Type="Edm.String" MaxLength="32" Nullable="false"/>
         <Property Name="CONNID" Type="Edm.String" MaxLength="32"/>
         <Property Name="CONNCOUNTER" Type="Edm.Int32" Nullable="false"/>
-        <Property Name="CDATE" Type="Edm.DateTimeOffset" Nullable="false"/>
+        <Property Name="INSERTED_AT" Type="Edm.DateTimeOffset" Nullable="false"/>
         <Property Name="SERVICEID" Type="Edm.String" MaxLength="36"/>
         <Property Name="SID" Type="Edm.String" MaxLength="40" Nullable="false"/>
         <Property Name="SYSTEMTYPE" Type="Edm.String" MaxLength="10" Nullable="false"/>
@@ -128,6 +128,7 @@
           <PropertyRef Name="CONNID"/>
           <PropertyRef Name="CONNCOUNTER"/>
           <PropertyRef Name="CDATE"/>
+          <PropertyRef Name="CTIME"/>
           <PropertyRef Name="SERVICEID"/>
           <PropertyRef Name="CONNIDOUT"/>
           <PropertyRef Name="CONNCOUNTERCOUT"/>
@@ -136,7 +137,7 @@
         <Property Name="CONNID" Type="Edm.String" MaxLength="32" Nullable="false"/>
         <Property Name="CONNCOUNTER" Type="Edm.Int32" Nullable="false"/>
         <Property Name="CDATE" Type="Edm.DateTime" Nullable="false" sap:display-format="Date"/>
-        <Property Name="CTIME" Type="Edm.Time"/>
+        <Property Name="CTIME" Type="Edm.Time" Nullable="false"/>
         <Property Name="SERVICEID" Type="Edm.String" MaxLength="36" Nullable="false"/>
         <Property Name="CONNIDOUT" Type="Edm.String" MaxLength="32" Nullable="false"/>
         <Property Name="CONNCOUNTERCOUT" Type="Edm.Int32" Nullable="false"/>
@@ -151,52 +152,14 @@
         <Property Name="SENTBYTES" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
         <Property Name="RECEIVEDBYTES" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
       </EntityType>
-      <EntityType Name="SNGLRECOUTA">
+      <EntityType Name="STATUS_OVERVIEW">
         <Key>
-          <PropertyRef Name="TRANSID"/>
+          <PropertyRef Name="Type"/>
         </Key>
-        <Property Name="TRANSID" Type="Edm.String" MaxLength="32" Nullable="false"/>
-        <Property Name="CDATE" Type="Edm.DateTime" Nullable="false" sap:display-format="Date"/>
-        <Property Name="CTIME" Type="Edm.Time" Nullable="false"/>
-        <Property Name="CONNCOUNTERCOUT" Type="Edm.Int32" Nullable="false"/>
-        <Property Name="NAME1" Type="Edm.String" MaxLength="150" Nullable="false"/>
-        <Property Name="CALLINGTIME" Type="Edm.Decimal" Scale="6" Precision="31" Nullable="false"/>
+        <Property Name="Type" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="Count" Type="Edm.Int32"/>
       </EntityType>
-      <Annotations Target="PerformanceDataService.EntityContainer/AGGRECIN" xmlns="http://docs.oasis-open.org/odata/ns/edm">
-        <Annotation Term="Capabilities.DeleteRestrictions">
-          <Record Type="Capabilities.DeleteRestrictionsType">
-            <PropertyValue Property="Deletable" Bool="false"/>
-          </Record>
-        </Annotation>
-        <Annotation Term="Capabilities.InsertRestrictions">
-          <Record Type="Capabilities.InsertRestrictionsType">
-            <PropertyValue Property="Insertable" Bool="false"/>
-          </Record>
-        </Annotation>
-        <Annotation Term="Capabilities.UpdateRestrictions">
-          <Record Type="Capabilities.UpdateRestrictionsType">
-            <PropertyValue Property="Updatable" Bool="false"/>
-          </Record>
-        </Annotation>
-      </Annotations>
-      <Annotations Target="PerformanceDataService.EntityContainer/AGGRECOUT" xmlns="http://docs.oasis-open.org/odata/ns/edm">
-        <Annotation Term="Capabilities.DeleteRestrictions">
-          <Record Type="Capabilities.DeleteRestrictionsType">
-            <PropertyValue Property="Deletable" Bool="false"/>
-          </Record>
-        </Annotation>
-        <Annotation Term="Capabilities.InsertRestrictions">
-          <Record Type="Capabilities.InsertRestrictionsType">
-            <PropertyValue Property="Insertable" Bool="false"/>
-          </Record>
-        </Annotation>
-        <Annotation Term="Capabilities.UpdateRestrictions">
-          <Record Type="Capabilities.UpdateRestrictionsType">
-            <PropertyValue Property="Updatable" Bool="false"/>
-          </Record>
-        </Annotation>
-      </Annotations>
-      <Annotations Target="PerformanceDataService.EntityContainer/SNGLRECIN" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <Annotations Target="PerformanceDataService.EntityContainer/STATUS_OVERVIEW" xmlns="http://docs.oasis-open.org/odata/ns/edm">
         <Annotation Term="Capabilities.DeleteRestrictions">
           <Record Type="Capabilities.DeleteRestrictionsType">
             <PropertyValue Property="Deletable" Bool="false"/>

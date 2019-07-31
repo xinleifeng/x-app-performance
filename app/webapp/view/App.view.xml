@@ -10,48 +10,51 @@
 	    	 
 	    <Page title="Page Title Here!">
 	    	<content>	
-	    	<uit:Table id="table1" selectionMode="MultiToggle" rows="{/SNGLRECOUT}" visibleRowCount="30">
+	    	<uit:Table id="table1" selectionMode="MultiToggle" rows="{/AGGRECIN}" visibleRowCount="30">
 				<uit:columns>
 					
-					<uit:Column  width="18rem" sortProperty="TRANSID">
-						<Label text="TRANSACTION ID" />
+					<uit:Column  width="6rem" sortProperty="ID">
+						<Label text="ID" />
 						<uit:template>
-							<Text text="{TRANSID}" wrapping="false" tooltip="{TRANSID}"/>
+							<Text text="{ID}" wrapping="false" tooltip="{ID}"/>
 						</uit:template>
 					</uit:Column>
-					<uit:Column width="5rem" showSortMenuEntry="true" sortProperty="CONNID">
-						<Label text="CONNID"/>
+					<uit:Column width="6rem" showSortMenuEntry="true" sortProperty="TYPE">
+						<Label text="TYPE"/>
 						<uit:template>
-							<Text text="{CONNID}" wrapping="false" tooltip="{CONNID}"/>
-						</uit:template>
-					</uit:Column>
-					
-					<uit:Column width="5rem" showSortMenuEntry="true" sortProperty="CONNCOUNTER">
-						<Label text="CONNCOUNTER"/>
-						<uit:template>
-							<Text text="{CONNCOUNTER}" wrapping="false"/>
+							<Text text="{TYPE}" wrapping="false"/>
 						</uit:template>
 					</uit:Column>
 					
-					<uit:Column width="18rem" sortProperty="CDATE">
-						<Label text="CDATE"/>
+					<uit:Column width="6rem" showSortMenuEntry="true" sortProperty="NAME1">
+						<Label text="NAME1"/>
 						<uit:template>
-							<Text text="{CDATE}"/>
+							<Text text="{NAME1}" wrapping="false"/>
+						</uit:template>
+					</uit:Column>
+					<uit:Column width="6rem" showSortMenuEntry="true" sortProperty="NAME2">
+						<Label text="NAME2"/>
+						<uit:template>
+							<Text text="{NAME2}" wrapping="false"/>
 						</uit:template>
 					</uit:Column>
 					
-					<uit:Column width="5rem" sortProperty="CTIME">
-						<Label text="CTIME"/>
+					<uit:Column width="30rem" sortProperty="INSERTED_AT">
+						<Label text="INSERTED_AT"/>
 						<uit:template>
-							<Text text="{CTIME}" wrapping="false"/>
+							<Text text="{INSERTED_AT}"/>
 						</uit:template>
 					</uit:Column>
-					<uit:Column width="5rem" sortProperty="SERVICEID">
-						<Label text="SERVICE ID"/>
+					
+					
+					<uit:Column width="8rem" sortProperty="RESPTIME">
+						<Label text="RESPTIME"/>
 						<uit:template>
-							<Text text="{SERVICEID}" wrapping="false" tooltip="{SERVICEID}"/>
+							<Text text="{RESPTIME}" wrapping="false" tooltip="{RESPTIME}"/>
 						</uit:template>
 					</uit:Column>
+					
+					<!--
 					<uit:Column width="5rem" sortProperty="CONNIDOUT">
 						<Label text="CONNIDOUT" />
 						<uit:template>
@@ -79,6 +82,7 @@
 						</uit:template>
 					</uit:Column>
 					
+					-->
 
 				</uit:columns>
 			</uit:Table>

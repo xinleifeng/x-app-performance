@@ -4,7 +4,7 @@ entity SAP_CRUN_PERFORMANCE_SNGLRECOUT {
   key CONNID : String(32) not null default '';
   key CONNCOUNTER : Integer not null default 0;
   key CDATE : LocalDate not null;
-  CTIME : LocalTime;
+  key CTIME : LocalTime not null;
   key SERVICEID : String(36) not null default '';
   key CONNIDOUT : String(32) not null default '';
   key CONNCOUNTERCOUT : Integer not null default 0;
