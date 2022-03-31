@@ -41,7 +41,7 @@
 		<!-- <vdm.inputdir>${project.basedir}/src/main/resources/liscalmrun</vdm.inputdir> 
 			<vdm.tmpdir>${project.build.directory}/vdm-tmp</vdm.tmpdir> <vdm.outputdir>${project.build.directory}/vdm</vdm.outputdir> -->
 
-		<spring.boot.dependencies-version>2.1.4.RELEASE</spring.boot.dependencies-version>
+		<spring.boot.dependencies-version>2.5.12</spring.boot.dependencies-version>
 
 		<gw.version>1.29.0</gw.version>
 		<xsuaa.version>2.1.0</xsuaa.version>
